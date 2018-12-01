@@ -1,0 +1,22 @@
+# Spring properties
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+spring:  jpa:    database: POSTGRESQL    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+  datasource:    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/eagle_eye_local
+    username: client_service
+    password: "{cipher}a79c2f5b8211cc3c0ec5c087b297fc2275b90512fbf1d63093140fc025627710"
+    dbcp2:      test-while-idle: true      validation-query: SELECT 1
+          
+# Custom properties
+tracer:
+  property: I AM THE DEFAULT

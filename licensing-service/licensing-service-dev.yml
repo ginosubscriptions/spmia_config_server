@@ -1,0 +1,33 @@
+# Spring properties
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+redis:
+  server: redis
+  port: 6379
+signing:
+  key: 345345fsdfsf5345
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+  datasource:
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/eagle_eye_dev
+    username: postgres_dev
+    password: "{cipher}a79c2f5b8211cc3c0ec5c087b297fc2275b90512fbf1d63093140fc025627710"
+    dbcp2:
+      test-while-idle: true
+      validation-query: SELECT 1
+  
+# Custom properties
+tracer:
+  property: I AM A DEV PROPERTY OVERRIDE
